@@ -41,5 +41,12 @@ const searchCountryByName = async (name) => {
   return countries;
 }
 
+const retrieveCountry = async (country) => {
 
-module.exports = { getAllCountries, getCountryById, searchCountryByName }
+  const existingCountry = await Country.findOne({ where: { name: country } });
+
+  return existingCountry;
+}
+
+
+module.exports = { getAllCountries, getCountryById, searchCountryByName, retrieveCountry }
