@@ -2,12 +2,11 @@ const { createActivity, getAllActivities } = require('../controllers/activityCon
 const { retrieveCountry } = require('../controllers/countryControllers.js')
 
 const createActivityHandler = async (req, res) => {
-  const { name, difficulty, duration, season, country } = req.body;
-  
+  const { name, difficulty, duration, season, countries } = req.body;
+  console.log(req.body);
   try {
     const newActivity = await createActivity(name, difficulty, duration, season); //crea una activity en la db
-    const countryRecords = await Promise.all(country.map(countryName => retrieveCountry(countryName))); //obtiene los countries de la db
-
+    const countryRecords = await Promise.all(countries.map(countryName => retrieveCountry(countryName))); //obtiene los countries de la db
     await newActivity.addCountries(countryRecords); //crea la relacion de la actividad con los paises
 
     res.status(200).json(newActivity)

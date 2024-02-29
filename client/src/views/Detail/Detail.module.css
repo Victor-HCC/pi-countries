@@ -1,0 +1,22 @@
+.container {
+  position: absolute;
+  top: 4rem;
+  width: 100%;
+  height: calc(100vh - 8rem);
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f0f0f0; /* Light gray background */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.2rem;
+  width: 60%;
+  height: 80%; 
+}

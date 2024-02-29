@@ -1,0 +1,9 @@
+.container {
+  width: 100%;
+  position: absolute;
+  top: 4rem;
+  left: 0;
+  right: 0;
+  height: calc(100% - 4rem);
+  background-color: #f0f0f0;
+}

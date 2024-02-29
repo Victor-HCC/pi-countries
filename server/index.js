@@ -4,7 +4,7 @@ const { conn } = require('./src/db.js');
 const PORT = 3001;
 const { fetchDataAndSaveToDB } = require('./src/fetchData.js')
 
-conn.sync({ force: true }).then(() => {
+conn.sync({ alter: true }).then(() => {
 server.listen(PORT, async () => {
   console.log(`Server listening on port ${PORT}`);
 

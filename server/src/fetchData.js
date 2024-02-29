@@ -5,7 +5,7 @@ const apiDataClean = (arr) => {
   return arr.map(country => {
     return {
       id: country.cca3,
-      name: country.name.official,
+      name: country.name.common,
       flag: country.flags.svg,
       continents: country.continents.join(', '),
       capital: country.capital ? country.capital.join(', ') : 'No info',
@@ -33,7 +33,6 @@ const fetchDataAndSaveToDB = async () => {
     console.log('Table is not empty');
   }
   
-  // return apiTypes;
 }
 
 module.exports = { fetchDataAndSaveToDB }
